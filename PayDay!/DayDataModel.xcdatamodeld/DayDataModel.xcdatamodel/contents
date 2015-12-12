@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="Hours" representedClassName=".Hours" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateAsString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="periodeNumber" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="totalTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weekNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yearNumber" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Hours" positionX="-63" positionY="-18" width="128" height="165"/>
+    </elements>
+</model>

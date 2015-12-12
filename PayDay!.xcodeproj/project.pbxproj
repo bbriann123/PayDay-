@@ -10,11 +10,23 @@
 		D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */; };
 		D3052BC11C1CA9C2001D8DCD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */; };
 		D3052BC31C1CA9C2001D8DCD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */; };
-		D3052BC61C1CA9C2001D8DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3052BC41C1CA9C2001D8DCD /* Main.storyboard */; };
 		D3052BC81C1CA9C2001D8DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */; };
 		D3052BCB1C1CA9C2001D8DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3052BC91C1CA9C2001D8DCD /* LaunchScreen.storyboard */; };
 		D3052BD61C1CA9C2001D8DCD /* PayDay_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BD51C1CA9C2001D8DCD /* PayDay_Tests.swift */; };
 		D3052BE11C1CA9C2001D8DCD /* PayDay_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BE01C1CA9C2001D8DCD /* PayDay_UITests.swift */; };
+		D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */; };
+		D3052BF21C1CA9FC001D8DCD /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */; };
+		D3052BF41C1CAA3E001D8DCD /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */; };
+		D3052BF81C1CAA6B001D8DCD /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF71C1CAA6B001D8DCD /* DayView.swift */; };
+		D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */; };
+		D3052BFF1C1CAA74001D8DCD /* TimesInsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */; };
+		D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */; };
+		D3052C011C1CAA74001D8DCD /* VariableDec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */; };
+		D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFD1C1CAA74001D8DCD /* YearView.swift */; };
+		D3052C041C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */; };
+		D3052C061C1CAA89001D8DCD /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C051C1CAA89001D8DCD /* Hours.swift */; };
+		D3052C081C1CAB95001D8DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3052C071C1CAB95001D8DCD /* Main.storyboard */; };
+		D3052C0A1C1CAD09001D8DCD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C091C1CAD09001D8DCD /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +50,7 @@
 		D3052BBB1C1CA9C2001D8DCD /* PayDay!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PayDay!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D3052BC51C1CA9C2001D8DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3052BCA1C1CA9C2001D8DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3052BCC1C1CA9C2001D8DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +60,19 @@
 		D3052BDC1C1CA9C2001D8DCD /* PayDay!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PayDay!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3052BE01C1CA9C2001D8DCD /* PayDay_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDay_UITests.swift; sourceTree = "<group>"; };
 		D3052BE21C1CA9C2001D8DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3052BEF1C1CA9EE001D8DCD /* DayDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DayDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
+		D3052BF71C1CAA6B001D8DCD /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayView.swift; path = ../../PayDay.swift/DayView.swift; sourceTree = "<group>"; };
+		D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeriodeView.swift; path = ../../PayDay.swift/PeriodeView.swift; sourceTree = "<group>"; };
+		D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesInsertView.swift; path = ../../PayDay.swift/TimesInsertView.swift; sourceTree = "<group>"; };
+		D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariabeController.swift; path = ../../PayDay.swift/VariabeController.swift; sourceTree = "<group>"; };
+		D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariableDec.swift; path = ../../PayDay.swift/VariableDec.swift; sourceTree = "<group>"; };
+		D3052BFD1C1CAA74001D8DCD /* YearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearView.swift; path = ../../PayDay.swift/YearView.swift; sourceTree = "<group>"; };
+		D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hours+CoreDataProperties.swift"; path = "../../PayDay.swift/Hours+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3052C051C1CAA89001D8DCD /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hours.swift; path = "../../../../../../Volumes/Data/File Server/PayDay/Loon Calculator/Hours.swift"; sourceTree = "<group>"; };
+		D3052C071C1CAB95001D8DCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D3052C091C1CAD09001D8DCD /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../../../../../Volumes/Data/File Server/PayDay/Loon Calculator/FirstViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +124,21 @@
 			isa = PBXGroup;
 			children = (
 				D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */,
+				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
+				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
+				D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */,
+				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
+				D3052C091C1CAD09001D8DCD /* FirstViewController.swift */,
+				D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */,
+				D3052C051C1CAA89001D8DCD /* Hours.swift */,
+				D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */,
+				D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */,
+				D3052BFD1C1CAA74001D8DCD /* YearView.swift */,
+				D3052BF71C1CAA6B001D8DCD /* DayView.swift */,
 				D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */,
 				D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */,
-				D3052BC41C1CA9C2001D8DCD /* Main.storyboard */,
+				D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */,
+				D3052C071C1CAB95001D8DCD /* Main.storyboard */,
 				D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */,
 				D3052BC91C1CA9C2001D8DCD /* LaunchScreen.storyboard */,
 				D3052BCC1C1CA9C2001D8DCD /* Info.plist */,
@@ -233,8 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3052BCB1C1CA9C2001D8DCD /* LaunchScreen.storyboard in Resources */,
+				D3052C081C1CAB95001D8DCD /* Main.storyboard in Resources */,
 				D3052BC81C1CA9C2001D8DCD /* Assets.xcassets in Resources */,
-				D3052BC61C1CA9C2001D8DCD /* Main.storyboard in Resources */,
+				D3052BF21C1CA9FC001D8DCD /* CustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +296,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */,
+				D3052C061C1CAA89001D8DCD /* Hours.swift in Sources */,
+				D3052C041C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift in Sources */,
 				D3052BC31C1CA9C2001D8DCD /* DetailViewController.swift in Sources */,
+				D3052C011C1CAA74001D8DCD /* VariableDec.swift in Sources */,
+				D3052BFF1C1CAA74001D8DCD /* TimesInsertView.swift in Sources */,
+				D3052BF81C1CAA6B001D8DCD /* DayView.swift in Sources */,
+				D3052BF41C1CAA3E001D8DCD /* DailyCell.swift in Sources */,
 				D3052BC11C1CA9C2001D8DCD /* MasterViewController.swift in Sources */,
+				D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */,
+				D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */,
 				D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */,
+				D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */,
+				D3052C0A1C1CAD09001D8DCD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +345,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D3052BC41C1CA9C2001D8DCD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3052BC51C1CA9C2001D8DCD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D3052BC91C1CA9C2001D8DCD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -506,6 +546,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3052BEF1C1CA9EE001D8DCD /* DayDataModel.xcdatamodel */,
+			);
+			currentVersion = D3052BEF1C1CA9EE001D8DCD /* DayDataModel.xcdatamodel */;
+			path = DayDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D3052BB31C1CA9C2001D8DCD /* Project object */;
 }
