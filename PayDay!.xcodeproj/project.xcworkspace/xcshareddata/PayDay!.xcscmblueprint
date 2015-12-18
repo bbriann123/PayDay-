@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3B26BAC6C55CB2936C73342216CAA6F996BE7C06",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7BFB32F551FEC4E255F8B3F902D01788621961FC" : 0,
+    "3B26BAC6C55CB2936C73342216CAA6F996BE7C06" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C5574F82-29D3-407C-8D5E-86E351774870",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7BFB32F551FEC4E255F8B3F902D01788621961FC" : "..\/..\/..\/..\/Volumes\/Data\/File%20Server\/PayDay",
+    "3B26BAC6C55CB2936C73342216CAA6F996BE7C06" : "PayDay!\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PayDay!",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PayDay!.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bbriann123\/PayDay-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3B26BAC6C55CB2936C73342216CAA6F996BE7C06"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bbriann123\/PayDay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7BFB32F551FEC4E255F8B3F902D01788621961FC"
+    }
+  ]
+}
