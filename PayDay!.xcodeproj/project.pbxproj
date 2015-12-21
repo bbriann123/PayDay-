@@ -24,9 +24,12 @@
 		D3052C011C1CAA74001D8DCD /* VariableDec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */; };
 		D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFD1C1CAA74001D8DCD /* YearView.swift */; };
 		D3052C041C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */; };
-		D3052C061C1CAA89001D8DCD /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C051C1CAA89001D8DCD /* Hours.swift */; };
 		D3052C081C1CAB95001D8DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3052C071C1CAB95001D8DCD /* Main.storyboard */; };
-		D3052C0A1C1CAD09001D8DCD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C091C1CAD09001D8DCD /* FirstViewController.swift */; };
+		D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF851C26F73300AEFFF9 /* Break.swift */; };
+		D31DCF881C26F79B00AEFFF9 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF871C26F79B00AEFFF9 /* Holiday.swift */; };
+		D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */; };
+		D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B5781C2434DE0021D679 /* Hours.swift */; };
+		D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B57A1C2435050021D679 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +73,12 @@
 		D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariableDec.swift; path = ../../PayDay.swift/VariableDec.swift; sourceTree = "<group>"; };
 		D3052BFD1C1CAA74001D8DCD /* YearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearView.swift; path = ../../PayDay.swift/YearView.swift; sourceTree = "<group>"; };
 		D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hours+CoreDataProperties.swift"; path = "../../PayDay.swift/Hours+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D3052C051C1CAA89001D8DCD /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hours.swift; path = "../../../../../../Volumes/Data/File Server/PayDay/Loon Calculator/Hours.swift"; sourceTree = "<group>"; };
 		D3052C071C1CAB95001D8DCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D3052C091C1CAD09001D8DCD /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../../../../../Volumes/Data/File Server/PayDay/Loon Calculator/FirstViewController.swift"; sourceTree = "<group>"; };
+		D31DCF851C26F73300AEFFF9 /* Break.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Break.swift; sourceTree = "<group>"; };
+		D31DCF871C26F79B00AEFFF9 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakCalculator.swift; sourceTree = "<group>"; };
+		D3C8B5781C2434DE0021D679 /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
+		D3C8B57A1C2435050021D679 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,16 +130,19 @@
 			isa = PBXGroup;
 			children = (
 				D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */,
+				D31DCF851C26F73300AEFFF9 /* Break.swift */,
 				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
 				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
 				D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */,
+				D3C8B57A1C2435050021D679 /* FirstViewController.swift */,
 				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
-				D3052C091C1CAD09001D8DCD /* FirstViewController.swift */,
 				D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */,
-				D3052C051C1CAA89001D8DCD /* Hours.swift */,
 				D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */,
 				D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */,
+				D3C8B5781C2434DE0021D679 /* Hours.swift */,
+				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
 				D3052BFD1C1CAA74001D8DCD /* YearView.swift */,
+				D31DCF871C26F79B00AEFFF9 /* Holiday.swift */,
 				D3052BF71C1CAA6B001D8DCD /* DayView.swift */,
 				D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */,
 				D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */,
@@ -297,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */,
-				D3052C061C1CAA89001D8DCD /* Hours.swift in Sources */,
+				D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */,
+				D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */,
+				D31DCF881C26F79B00AEFFF9 /* Holiday.swift in Sources */,
 				D3052C041C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift in Sources */,
 				D3052BC31C1CA9C2001D8DCD /* DetailViewController.swift in Sources */,
 				D3052C011C1CAA74001D8DCD /* VariableDec.swift in Sources */,
@@ -308,8 +319,9 @@
 				D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */,
 				D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */,
 				D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */,
+				D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */,
 				D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */,
-				D3052C0A1C1CAD09001D8DCD /* FirstViewController.swift in Sources */,
+				D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +540,7 @@
 				D3052BE71C1CA9C2001D8DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3052BE81C1CA9C2001D8DCD /* Build configuration list for PBXNativeTarget "PayDay!Tests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +549,7 @@
 				D3052BEA1C1CA9C2001D8DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3052BEB1C1CA9C2001D8DCD /* Build configuration list for PBXNativeTarget "PayDay!UITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +558,7 @@
 				D3052BED1C1CA9C2001D8DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

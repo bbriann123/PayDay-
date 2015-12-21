@@ -2,7 +2,7 @@
 //  FirstViewController.swift
 //  PayDay!
 //
-//  Created by Brian van den Heuvel on 9/18/15.
+//  Created by Brian van den Heuvel on 18/12/15.
 //  Copyright © 2015 Brian van den Heuvel. All rights reserved.
 //
 
@@ -16,12 +16,11 @@ class FirstViewController: UIViewController {
         let tbc = tabBarController as! VariableController
         varDec = tbc.varDec
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

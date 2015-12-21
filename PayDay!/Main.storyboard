@@ -3,8 +3,96 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--BreakCalculator-->
+        <scene sceneID="Qat-mk-nyZ">
+            <objects>
+                <viewController title="BreakCalculator" id="HdJ-7H-fCq" customClass="BreakCalculator" customModule="PayDay_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ma9-0v-vWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="qhG-fO-65w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aau-ru-ixx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="arb-bN-pgx">
+                                <rect key="frame" x="20" y="307" width="374" height="373"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begin tijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3X-h4-Gea">
+                                <rect key="frame" x="66" y="28" width="72" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="bwo-qk-DSN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-a5-QuJ">
+                                <rect key="frame" x="0.0" y="73" width="414" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="hHz-yg-K8D"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="HdJ-7H-fCq" id="Dun-01-Xhm"/>
+                                    <outlet property="delegate" destination="HdJ-7H-fCq" id="Lwb-Kd-6Qm"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eind tijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCs-8a-Soj">
+                                <rect key="frame" x="283" y="28" width="61" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="8ig-of-N1b"/>
+                                    <constraint firstAttribute="height" constant="21" id="8nJ-wS-co4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8nJ-wS-co4"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="arb-bN-pgx" firstAttribute="top" secondItem="jhY-a5-QuJ" secondAttribute="bottom" constant="46" id="0au-34-ozr"/>
+                            <constraint firstItem="arb-bN-pgx" firstAttribute="trailing" secondItem="aau-ru-ixx" secondAttribute="trailingMargin" id="33X-3l-BSA"/>
+                            <constraint firstItem="qhG-fO-65w" firstAttribute="top" secondItem="arb-bN-pgx" secondAttribute="bottom" constant="7" id="Cg9-OU-Zno"/>
+                            <constraint firstItem="jhY-a5-QuJ" firstAttribute="top" secondItem="a3X-h4-Gea" secondAttribute="bottom" constant="24" id="E1K-04-7iQ"/>
+                            <constraint firstItem="GCs-8a-Soj" firstAttribute="top" secondItem="ma9-0v-vWY" secondAttribute="bottom" constant="8" id="HdQ-t5-UGN"/>
+                            <constraint firstItem="arb-bN-pgx" firstAttribute="centerX" secondItem="jhY-a5-QuJ" secondAttribute="centerX" id="Kkc-NX-MxY"/>
+                            <constraint firstItem="GCs-8a-Soj" firstAttribute="leading" secondItem="a3X-h4-Gea" secondAttribute="trailing" constant="145" id="PWK-VH-SpZ"/>
+                            <constraint firstItem="a3X-h4-Gea" firstAttribute="leading" secondItem="aau-ru-ixx" secondAttribute="leadingMargin" constant="46" id="eQn-m9-DQQ"/>
+                            <constraint firstItem="jhY-a5-QuJ" firstAttribute="top" secondItem="aau-ru-ixx" secondAttribute="top" constant="73" id="hXj-0d-QZu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GCs-8a-Soj" secondAttribute="trailing" constant="50" id="kal-vp-QQA"/>
+                            <constraint firstItem="jhY-a5-QuJ" firstAttribute="top" secondItem="GCs-8a-Soj" secondAttribute="bottom" constant="24" id="qls-i5-YjT"/>
+                            <constraint firstItem="arb-bN-pgx" firstAttribute="leading" secondItem="aau-ru-ixx" secondAttribute="leadingMargin" id="seo-pJ-axd"/>
+                            <constraint firstItem="jhY-a5-QuJ" firstAttribute="leading" secondItem="aau-ru-ixx" secondAttribute="leading" id="vd3-yK-xem"/>
+                            <constraint firstItem="a3X-h4-Gea" firstAttribute="top" secondItem="ma9-0v-vWY" secondAttribute="bottom" constant="8" id="yPe-dV-LI0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PWK-VH-SpZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pauze" image="break" id="SRl-ak-vbt"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="outPut" destination="arb-bN-pgx" id="4bb-fh-LfI"/>
+                        <outlet property="timePicker" destination="jhY-a5-QuJ" id="wsp-SP-DkJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7om-gL-24b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="-1057"/>
+        </scene>
         <!--PayDay-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -277,6 +365,7 @@
                         <segue destination="VtJ-xf-aDP" kind="relationship" relationship="viewControllers" id="Usr-dY-OIY"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="JBR-VX-epg" kind="relationship" relationship="viewControllers" id="9RZ-PE-Cc5"/>
+                        <segue destination="HdJ-7H-fCq" kind="relationship" relationship="viewControllers" id="fcf-9A-gNx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -285,6 +374,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="break" width="32" height="32"/>
         <image name="calendar" width="32" height="32"/>
         <image name="money" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
