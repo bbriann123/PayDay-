@@ -7,14 +7,90 @@
 //
 
 import UIKit
+import CoreData
 
 class FirstViewController: UIViewController {
+    
+    @IBOutlet weak var textColum: UILabel!
+    @IBOutlet weak var wageColumn: UILabel!
+    @IBOutlet weak var hourColumn: UILabel!
+    
     var varDec = VariableDec()
+    var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var requested:[Hours] = []
+    var currentPeriod:[Hours] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         let tbc = tabBarController as! VariableController
+        if userDefaults().readDefaultsDouble("currentWage") <= 0.1{
+            print("true")
+            let alert = UIAlertController(title: "Ontbrekende instelling", message: "Uurloon niet ingesteld!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                self.tabBarController?.selectedIndex = 2
+                }))
+            self.presentViewController(alert, animated: true, completion: {})
+        }
+        // Do any additional setup after loading the view, typically from a nib.
         varDec = tbc.varDec
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        requested = Hours.returnDate(context) as! [Hours]
+        self.currentPeriod.removeAll()
+    }
+    override func viewDidAppear(animated: Bool) {
+        if userDefaults().readDefaultsDouble("currentWage") <= 0.1{
+            print("true")
+            let alert = UIAlertController(title: "Ontbrekende instelling", message: "Uurloon niet ingesteld!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+                self.tabBarController?.selectedIndex = 2
+            }))
+            alert.addAction(UIAlertAction(title:"Cancel", style:UIAlertActionStyle.Cancel, handler:  nil  ))
+            self.presentViewController(alert, animated: true, completion: {})
+        }
+        self.currentPeriod.removeAll()
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        requested = Hours.returnDate(context) as! [Hours]
+        searchResultArray(13)
+        printTotalTimeInPeriod()
+    }
+    override func viewDidDisappear(animated: Bool) {
+        self.currentPeriod.removeAll()
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        requested = Hours.returnDate(context) as! [Hours]
+        searchResultArray(13)
+        printTotalTimeInPeriod()
+    }
+    
+    func printTotalTimeInPeriod(){
+        var totalTime = 0
+        for var x = 0; x < currentPeriod.count; ++x{
+            totalTime = totalTime + Int(currentPeriod[x].totalTime!)
+        }
+        let (Hours,Minutes) = secondsToHoursMinutesSeconds(totalTime)
+        //convert tuple to string concatenated string, multiple minutes to 100 value's (20 min = 33 etc.. (minutes*   1.6666666667)) then convert to Double so 12.25 becomes 12.42
+        let totalTimeDouble = Double("\(Hours).\(Int(Double(Minutes)*1.6666666667))")
+        let printValue = Payment().getWorked(totalTimeDouble!)
+        let textColumText = "Gewerkt\n" + "ADV\n"+"Vakantie uren\n"+"Vakantie toeslag\n"+"Winstuitkering\n"+"Bruto loon"
+        textColum.text = textColumText
+        textColum.sizeToFit()
+        let hourColumText = "\(totalTimeDouble!) uur\n\(NSString(format:"%.2f uur",printValue.kptADV))\n\(NSString(format:"%.2f uur",printValue.kptVacation))"
+        hourColumn.text = hourColumText
+        hourColumn.sizeToFit()
+        let wageColumnText = "\(String(totalTimeDouble!*printValue.allowance).value)\n \(String(printValue.kptADVWage).value)\n\(String(printValue.kptVacationWage).value)\n \(String(printValue.kptVacationAllowanceWage).value)\n \(String(printValue.kptWUKWage).value)\n \(String(printValue.kptGrossWage).value)"
+        wageColumn.text = wageColumnText
+        wageColumn.sizeToFit()
+        
+    }
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60)
+    }
+    func searchResultArray(currentPeriod: Int){
+        for var i:Int = 0; i < requested.count; ++i{
+            let periodNumber:Int = Int(requested[i].periodeNumber!)
+            if (periodNumber == currentPeriod){
+                self.currentPeriod.append(requested[i])
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,4 +99,18 @@ class FirstViewController: UIViewController {
     }
     
     
+}
+extension NSString {
+    var value:String {
+        let userDef = userDefaults().readDefaultsString("currency")
+        switch(userDef){
+        case "€":
+            return ("€ \(self)")
+        case "$": return ("$ \(self)")
+        case "£": return ("£ \(self)")
+        case "¥": return ("¥ \(self)")
+        case "CHF": return ("CHF= \(self)")
+        default: return ("€ \(self)")
+        }
+    }
 }

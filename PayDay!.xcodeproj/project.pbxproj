@@ -28,6 +28,9 @@
 		D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF851C26F73300AEFFF9 /* Break.swift */; };
 		D31DCF881C26F79B00AEFFF9 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF871C26F79B00AEFFF9 /* Holiday.swift */; };
 		D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */; };
+		D33871AC1C2D6271006D7146 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AA1C2D61A3006D7146 /* Settings.swift */; };
+		D33871AE1C304CDC006D7146 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AD1C304CDC006D7146 /* Payment.swift */; };
+		D33871B01C306026006D7146 /* userDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AF1C306026006D7146 /* userDefaults.swift */; };
 		D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B5781C2434DE0021D679 /* Hours.swift */; };
 		D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B57A1C2435050021D679 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +80,9 @@
 		D31DCF851C26F73300AEFFF9 /* Break.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Break.swift; sourceTree = "<group>"; };
 		D31DCF871C26F79B00AEFFF9 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakCalculator.swift; sourceTree = "<group>"; };
+		D33871AA1C2D61A3006D7146 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D33871AD1C304CDC006D7146 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		D33871AF1C306026006D7146 /* userDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDefaults.swift; sourceTree = "<group>"; };
 		D3C8B5781C2434DE0021D679 /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
 		D3C8B57A1C2435050021D679 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +139,7 @@
 				D31DCF851C26F73300AEFFF9 /* Break.swift */,
 				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
 				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
+				D33871AD1C304CDC006D7146 /* Payment.swift */,
 				D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */,
 				D3C8B57A1C2435050021D679 /* FirstViewController.swift */,
 				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
@@ -141,8 +148,10 @@
 				D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */,
 				D3C8B5781C2434DE0021D679 /* Hours.swift */,
 				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
+				D33871AF1C306026006D7146 /* userDefaults.swift */,
 				D3052BFD1C1CAA74001D8DCD /* YearView.swift */,
 				D31DCF871C26F79B00AEFFF9 /* Holiday.swift */,
+				D33871AA1C2D61A3006D7146 /* Settings.swift */,
 				D3052BF71C1CAA6B001D8DCD /* DayView.swift */,
 				D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */,
 				D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */,
@@ -305,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33871AC1C2D6271006D7146 /* Settings.swift in Sources */,
 				D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */,
 				D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */,
 				D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */,
@@ -320,6 +330,8 @@
 				D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */,
 				D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */,
 				D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */,
+				D33871B01C306026006D7146 /* userDefaults.swift in Sources */,
+				D33871AE1C304CDC006D7146 /* Payment.swift in Sources */,
 				D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */,
 				D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */,
 			);
