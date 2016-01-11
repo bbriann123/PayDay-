@@ -50,15 +50,51 @@ class FirstViewController: UIViewController {
         self.currentPeriod.removeAll()
         let context:NSManagedObjectContext = appDel.managedObjectContext
         requested = Hours.returnDate(context) as! [Hours]
-        searchResultArray(13)
+        searchResultArray(1)
         printTotalTimeInPeriod()
+        getBonusHours()
     }
     override func viewDidDisappear(animated: Bool) {
         self.currentPeriod.removeAll()
         let context:NSManagedObjectContext = appDel.managedObjectContext
         requested = Hours.returnDate(context) as! [Hours]
-        searchResultArray(13)
+        searchResultArray(1)
         printTotalTimeInPeriod()
+    }
+    
+    func getBonusHours() -> [Int]{
+        var max = 0
+        var totalHours:[Int] = []
+        var totalloon:Double = 0.0
+        var totaluren:Double = 0.0
+        for var l = 0; l < currentPeriod.count; ++l{
+            if Int(currentPeriod[l].weekNumber! as String)! > max {
+                max = Int(currentPeriod[l].weekNumber! as String)!
+                totalHours.append(Int(currentPeriod[l].totalTime!))
+            }else{
+                totalHours[max-1] = totalHours[max-1] + Int(currentPeriod[l].totalTime!)
+            }
+            print(getHourMinute(currentPeriod[l].startTime!))
+            print(getHourMinute(currentPeriod[l].endTime!))
+            print("-----")
+            totalloon = totalloon + Payment().isToeslagUur(currentPeriod[l].date!, startTime: getHourMinute(currentPeriod[l].startTime!), endTime: getHourMinute(currentPeriod[l].endTime!), weekMoreThanThirtySix: false).totaalLoon
+            totaluren = totaluren + Payment().isToeslagUur(currentPeriod[l].date!, startTime: getHourMinute(currentPeriod[l].startTime!), endTime: getHourMinute(currentPeriod[l].endTime!), weekMoreThanThirtySix: false).totaalUren
+            print(totalloon)
+            print(totaluren)
+            print(currentPeriod[l].totalTime)
+            print("-----")
+        }
+        print(totalloon)
+        print(totaluren)
+        return totalHours
+    }
+    
+    func getHourMinute(date: NSDate) -> (Double){
+        let calendar = NSCalendar.currentCalendar()
+        let comp = calendar.components([.Hour, .Minute], fromDate: date)
+        let hour = comp.hour
+        let minute = comp.minute
+        return Double("\(hour).\(minute)")!
     }
     
     func printTotalTimeInPeriod(){
@@ -109,7 +145,7 @@ extension NSString {
         case "$": return ("$ \(self)")
         case "£": return ("£ \(self)")
         case "¥": return ("¥ \(self)")
-        case "CHF": return ("CHF= \(self)")
+        case "CHF": return ("CHF \(self)")
         default: return ("€ \(self)")
         }
     }

@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="373" id="lq1-fy-pYI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begin tijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3X-h4-Gea">
@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="72" id="NWj-ZJ-Ayy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eind tijd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCs-8a-Soj">
@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="21" id="8nJ-wS-co4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -134,7 +134,7 @@
                                     <constraint firstAttribute="width" constant="145" id="dtX-MU-5Pc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWq-iU-Ycc">
@@ -145,24 +145,24 @@
                                     <constraint firstAttribute="width" constant="80" id="ZR4-Ij-ApI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdz-xV-tpp">
-                                <rect key="frame" x="313" y="147" width="81" height="21"/>
+                                <rect key="frame" x="306" y="147" width="88" height="21"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="Qzv-5c-oK6"/>
-                                    <constraint firstAttribute="height" priority="250" constant="20" id="zaz-6s-tbn"/>
+                                    <constraint firstAttribute="width" constant="88" id="Qzv-5c-oK6"/>
+                                    <constraint firstAttribute="height" priority="250" constant="21" id="zaz-6s-tbn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qdz-xV-tpp" firstAttribute="leading" secondItem="YWq-iU-Ycc" secondAttribute="trailing" constant="15" id="E75-AN-qjD"/>
+                            <constraint firstItem="qdz-xV-tpp" firstAttribute="leading" secondItem="YWq-iU-Ycc" secondAttribute="trailing" constant="8" id="E75-AN-qjD"/>
                             <constraint firstItem="YWq-iU-Ycc" firstAttribute="leading" secondItem="b8V-Ur-dpg" secondAttribute="trailing" constant="38" id="GLX-zS-a7b"/>
                             <constraint firstItem="b8V-Ur-dpg" firstAttribute="top" secondItem="nWC-hb-Ckd" secondAttribute="bottom" constant="83" id="IOD-Pc-HY2"/>
                             <constraint firstItem="b8V-Ur-dpg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="15" id="TJr-86-8Pk"/>
