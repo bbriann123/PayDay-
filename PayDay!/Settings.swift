@@ -168,7 +168,6 @@ class Settings: UIViewController, UITableViewDelegate {
             alert.dismissViewControllerAnimated(true, completion: nil)
         }
         self.presentViewController(alert, animated: true, completion: {})
-        print(self.contractHours)
     }
     
     func getCurrency()-> String{
