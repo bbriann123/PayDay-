@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10118.6" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Hours" representedClassName=".Hours" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateAsString" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,7 +10,14 @@
         <attribute name="weekNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="yearNumber" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="SavedSettings" representedClassName=".savedSettings" syncable="YES">
+        <attribute name="contractHours" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hourlyWage" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="uniqueKey" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Hours" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="SavedSettings" positionX="-63" positionY="45" width="128" height="105"/>
     </elements>
 </model>

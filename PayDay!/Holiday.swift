@@ -106,7 +106,7 @@ class CreateHoliday{
             default: return holidays2016
         }
     }
-    func nextHoliday(z:Array<Holiday>, firstDayOfWeek:NSDate) ->NSDate{
+    func nextHoliday(z:Array<Holiday>, firstDayOfWeek:NSDate) -> Holiday?{
         outerLoop: for(var x = 0; x < z.count; ++x){
             for(var days = 0; days < 14; ++days){
                 let Calendar = NSCalendar.currentCalendar()
@@ -115,11 +115,11 @@ class CreateHoliday{
                 components.setValue(days, forComponent: NSCalendarUnit.Day);
                 date = Calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
                 if(date == z[x].date){
-                    return z[x].date
+                    return z[x]
                 }
             }
         }
-        return NSDate()
+        return nil
     }
 
 }

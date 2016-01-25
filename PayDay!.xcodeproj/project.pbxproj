@@ -25,6 +25,8 @@
 		D3052C021C1CAA74001D8DCD /* YearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFD1C1CAA74001D8DCD /* YearView.swift */; };
 		D3052C041C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */; };
 		D3052C081C1CAB95001D8DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3052C071C1CAB95001D8DCD /* Main.storyboard */; };
+		D315C4F61C47B5D30046D076 /* savedSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315C4F51C47B5D30046D076 /* savedSettings+CoreDataProperties.swift */; };
+		D315C4F81C47B5F00046D076 /* savedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315C4F71C47B5F00046D076 /* savedSettings.swift */; };
 		D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF851C26F73300AEFFF9 /* Break.swift */; };
 		D31DCF881C26F79B00AEFFF9 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF871C26F79B00AEFFF9 /* Holiday.swift */; };
 		D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */; };
@@ -77,6 +79,8 @@
 		D3052BFD1C1CAA74001D8DCD /* YearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearView.swift; path = ../../PayDay.swift/YearView.swift; sourceTree = "<group>"; };
 		D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hours+CoreDataProperties.swift"; path = "../../PayDay.swift/Hours+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3052C071C1CAB95001D8DCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D315C4F51C47B5D30046D076 /* savedSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "savedSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D315C4F71C47B5F00046D076 /* savedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = savedSettings.swift; sourceTree = "<group>"; };
 		D31DCF851C26F73300AEFFF9 /* Break.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Break.swift; sourceTree = "<group>"; };
 		D31DCF871C26F79B00AEFFF9 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakCalculator.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
 				D33871AD1C304CDC006D7146 /* Payment.swift */,
 				D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */,
+				D315C4F41C47B5BD0046D076 /* CoreDataSettings */,
 				D3C8B57A1C2435050021D679 /* FirstViewController.swift */,
 				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
 				D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */,
@@ -180,6 +185,15 @@
 				D3052BE21C1CA9C2001D8DCD /* Info.plist */,
 			);
 			path = "PayDay!UITests";
+			sourceTree = "<group>";
+		};
+		D315C4F41C47B5BD0046D076 /* CoreDataSettings */ = {
+			isa = PBXGroup;
+			children = (
+				D315C4F51C47B5D30046D076 /* savedSettings+CoreDataProperties.swift */,
+				D315C4F71C47B5F00046D076 /* savedSettings.swift */,
+			);
+			name = CoreDataSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D315C4F61C47B5D30046D076 /* savedSettings+CoreDataProperties.swift in Sources */,
 				D33871AC1C2D6271006D7146 /* Settings.swift in Sources */,
 				D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */,
 				D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */,
@@ -329,6 +344,7 @@
 				D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */,
 				D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */,
 				D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */,
+				D315C4F81C47B5F00046D076 /* savedSettings.swift in Sources */,
 				D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */,
 				D33871B01C306026006D7146 /* userDefaults.swift in Sources */,
 				D33871AE1C304CDC006D7146 /* Payment.swift in Sources */,
@@ -471,6 +487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -7,23 +7,31 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class Payment {
-    let contract = 12
-    let allowance:Double = 12.25
+    var contract = 48
+    var allowance:Double = 0
+
     
-    func getWorked(worked:Double) -> (allowance:Double, kptADV:Double, kptVacation:Double, kptADVWage:String, kptVacationWage:String, kptVacationAllowanceWage: String, kptWUKWage:String, kptGrossWage:String){
+    func getWorked(worked:Double, toeslagGeld:Double, toeslagUren:Double) -> [(String, (Any?,Any?))]?{
+        var response = Dictionary<String, (Any?, Any?)>()
         var worked:Double = worked
-        var allowance:Double = userDefaults().readDefaultsDouble("currentWage")
-        var sick:Double = 0
-        var bd:Double = 0
+        var allowance:Double = self.allowance
+        //let sick:Double = 0
+        //let bd:Double = 0
         allowance = floor(allowance * 4)/4
-        let d:Double = worked// + allowance + sick + bd
-        if contract <= 48{
+        let d:Double = worked + allowance// + sick + bd
+        if contract <= 48 && !(worked <= 0.1){
             let d1:Double = d - Double(contract)
             if(d1 > 0 && contract != 0){
                 let kptTVT = d1
                 worked = worked-d1
+                response.updateValue((kptTVT.roundToPlaces(2),NSString(format: "%.2f",(d1*allowance))), forKey: "3 TVT")
+                response.updateValue((worked.roundToPlaces(2),NSString(format: "%.2f",(worked*allowance))), forKey: "1 Gewerkt")
+            }else{
+                response.updateValue((worked.roundToPlaces(2),NSString(format: "%.2f",(worked*allowance))), forKey: "1 Gewerkt")
             }
             let kptADV = 0.0901*d
             let kptVacation = 0.1109*d
@@ -35,9 +43,19 @@ class Payment {
             let kptVacationAllowanceWage = NSString(format: "%.2f",(kptVacationAllowance * allowance))
             let kptWUKWage = NSString(format: "%.2f",(kptWUK * allowance))
             let kptGrossWage = NSString(format: "%.2f",(kptGross * allowance))
-            return (allowance, kptADV, kptVacation, kptADVWage as String,kptVacationWage as String,kptVacationAllowanceWage as String ,kptWUKWage as String,kptGrossWage as String)
+            let toeslagUren = (toeslagGeld-(toeslagUren*allowance))/allowance
+            let toeslagLoon = NSString(format: "%.2f",toeslagUren*allowance)
+            response.updateValue((toeslagUren.roundToPlaces(2),toeslagLoon),forKey:"2 Toeslag")
+            response.updateValue((nil, kptVacationAllowanceWage), forKey: "6 Vakantie toeslag")
+            response.updateValue((nil, kptWUKWage), forKey: "7 Winstuitkering")
+            response.updateValue((nil, kptGrossWage), forKey: "8 Bruto loon")
+            response.updateValue((kptADV.roundToPlaces(2),kptADVWage), forKey: "4 ADV")
+            response.updateValue((allowance.roundToPlaces(2), nil), forKey: "uurloon")
+            response.updateValue((kptVacation.roundToPlaces(2),kptVacationWage), forKey: "5 Vakantie uren")
+            let sortedKeys = response.sort{ $0.0 < $1.0}
+            return sortedKeys
         }
-        return (0.0,0.0,0.0,"","","","","")
+        return nil
     }
     
     func getDayOfWeek(today:NSDate)->Int {
@@ -48,8 +66,7 @@ class Payment {
         return weekDay
     }
     
-    func isToeslagUur(date: NSDate, var startTime: Double, var endTime: Double, weekMoreThanThirtySix:Bool) -> (totaalUren:Double, totaalLoon:Double){
-        print("\(date) - \(startTime) - \(endTime) - \(weekMoreThanThirtySix)")
+    func isToeslagUur(date: NSDate, startTime: Double, var endTime: Double, weekMoreThanThirtySix:Bool) -> (totaalUren:Double, totaalLoon:Double){
         let weekdayNumber = getDayOfWeek(date)
         var vijfentwintigProcent = 0
         var vijftigProcent = 0
@@ -279,5 +296,12 @@ class Payment {
         totaalToeslagLoon = drieendertigProcentLoon + vijftigProcentLoon + vijfentwintigProcentLoon + honderdProcentLoon
         return (totaalTijd, totaalToeslagLoon)
         
+    }
+}
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundToPlaces(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(self * divisor) / divisor
     }
 }

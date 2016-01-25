@@ -87,7 +87,7 @@ class Break {
         }while (true)
         fictiveEndTime = endTime - startTime - Double(k)/60
         k = i
-        print(endTime)
+
         if fictiveEndTime > 4.5 {
             k = i
             if endTime > 19{
