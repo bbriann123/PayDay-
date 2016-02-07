@@ -138,7 +138,7 @@ class Settings: UIViewController, UITableViewDelegate {
             alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: { (UIAlertAction)in
                 if self.number == 1{
                     if ((self.tField.text?.isEmpty) != true){
-                    self.currentWage = Double(self.tField.text!)!
+                    self.currentWage = Double(self.tField.text!.floatConverter)
                     }
                 }else {
                     self.contractHours = Int(self.nextTextField.text!)!
@@ -189,4 +189,19 @@ class Settings: UIViewController, UITableViewDelegate {
         }
     }
 
+}
+extension String {
+    var floatConverter: Float {
+        let converter = NSNumberFormatter()
+        converter.decimalSeparator = "."
+        if let result = converter.numberFromString(self) {
+            return result.floatValue
+        } else {
+            converter.decimalSeparator = ","
+            if let result = converter.numberFromString(self) {
+                return result.floatValue
+            }
+        }
+        return 0
+    }
 }

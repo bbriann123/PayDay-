@@ -264,6 +264,7 @@
 				TargetAttributes = {
 					D3052BBA1C1CA9C2001D8DCD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = JS6D9L5JK6;
 					};
 					D3052BD01C1CA9C2001D8DCD = {
 						CreatedOnToolsVersion = 7.2;
@@ -483,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PayDay!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
@@ -495,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PayDay!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
