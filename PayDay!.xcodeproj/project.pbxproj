@@ -18,7 +18,6 @@
 		D3052BF21C1CA9FC001D8DCD /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */; };
 		D3052BF41C1CAA3E001D8DCD /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */; };
 		D3052BF81C1CAA6B001D8DCD /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF71C1CAA6B001D8DCD /* DayView.swift */; };
-		D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */; };
 		D3052BFF1C1CAA74001D8DCD /* TimesInsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */; };
 		D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */; };
 		D3052C011C1CAA74001D8DCD /* VariableDec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */; };
@@ -33,6 +32,7 @@
 		D33871AC1C2D6271006D7146 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AA1C2D61A3006D7146 /* Settings.swift */; };
 		D33871AE1C304CDC006D7146 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AD1C304CDC006D7146 /* Payment.swift */; };
 		D33871B01C306026006D7146 /* userDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AF1C306026006D7146 /* userDefaults.swift */; };
+		D37BFCCB1C67F2F900774834 /* PeriodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37BFCCA1C67F2F900774834 /* PeriodeView.swift */; };
 		D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B5781C2434DE0021D679 /* Hours.swift */; };
 		D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B57A1C2435050021D679 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,6 @@
 		D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		D3052BF71C1CAA6B001D8DCD /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayView.swift; path = ../../PayDay.swift/DayView.swift; sourceTree = "<group>"; };
-		D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeriodeView.swift; path = ../../PayDay.swift/PeriodeView.swift; sourceTree = "<group>"; };
 		D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesInsertView.swift; path = ../../PayDay.swift/TimesInsertView.swift; sourceTree = "<group>"; };
 		D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariabeController.swift; path = ../../PayDay.swift/VariabeController.swift; sourceTree = "<group>"; };
 		D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariableDec.swift; path = ../../PayDay.swift/VariableDec.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		D33871AA1C2D61A3006D7146 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D33871AD1C304CDC006D7146 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		D33871AF1C306026006D7146 /* userDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDefaults.swift; sourceTree = "<group>"; };
+		D37BFCCA1C67F2F900774834 /* PeriodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodeView.swift; sourceTree = "<group>"; };
 		D3C8B5781C2434DE0021D679 /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
 		D3C8B57A1C2435050021D679 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +144,6 @@
 				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
 				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
 				D33871AD1C304CDC006D7146 /* Payment.swift */,
-				D3052BF91C1CAA74001D8DCD /* PeriodeView.swift */,
 				D315C4F41C47B5BD0046D076 /* CoreDataSettings */,
 				D3C8B57A1C2435050021D679 /* FirstViewController.swift */,
 				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
@@ -154,6 +153,7 @@
 				D3C8B5781C2434DE0021D679 /* Hours.swift */,
 				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
 				D33871AF1C306026006D7146 /* userDefaults.swift */,
+				D37BFCCA1C67F2F900774834 /* PeriodeView.swift */,
 				D3052BFD1C1CAA74001D8DCD /* YearView.swift */,
 				D31DCF871C26F79B00AEFFF9 /* Holiday.swift */,
 				D33871AA1C2D61A3006D7146 /* Settings.swift */,
@@ -331,7 +331,6 @@
 			files = (
 				D315C4F61C47B5D30046D076 /* savedSettings+CoreDataProperties.swift in Sources */,
 				D33871AC1C2D6271006D7146 /* Settings.swift in Sources */,
-				D3052BFE1C1CAA74001D8DCD /* PeriodeView.swift in Sources */,
 				D31DCF861C26F73300AEFFF9 /* Break.swift in Sources */,
 				D31DCF8A1C28719F00AEFFF9 /* BreakCalculator.swift in Sources */,
 				D31DCF881C26F79B00AEFFF9 /* Holiday.swift in Sources */,
@@ -344,6 +343,7 @@
 				D3052BC11C1CA9C2001D8DCD /* MasterViewController.swift in Sources */,
 				D3052C001C1CAA74001D8DCD /* VariabeController.swift in Sources */,
 				D3052BF01C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld in Sources */,
+				D37BFCCB1C67F2F900774834 /* PeriodeView.swift in Sources */,
 				D3052BBF1C1CA9C2001D8DCD /* AppDelegate.swift in Sources */,
 				D315C4F81C47B5F00046D076 /* savedSettings.swift in Sources */,
 				D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */,
