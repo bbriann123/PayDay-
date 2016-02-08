@@ -71,12 +71,12 @@
 		D3052BEF1C1CA9EE001D8DCD /* DayDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DayDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
-		D3052BF71C1CAA6B001D8DCD /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayView.swift; path = ../../PayDay.swift/DayView.swift; sourceTree = "<group>"; };
-		D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimesInsertView.swift; path = ../../PayDay.swift/TimesInsertView.swift; sourceTree = "<group>"; };
-		D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariabeController.swift; path = ../../PayDay.swift/VariabeController.swift; sourceTree = "<group>"; };
-		D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VariableDec.swift; path = ../../PayDay.swift/VariableDec.swift; sourceTree = "<group>"; };
-		D3052BFD1C1CAA74001D8DCD /* YearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YearView.swift; path = ../../PayDay.swift/YearView.swift; sourceTree = "<group>"; };
-		D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hours+CoreDataProperties.swift"; path = "../../PayDay.swift/Hours+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3052BF71C1CAA6B001D8DCD /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesInsertView.swift; sourceTree = "<group>"; };
+		D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariabeController.swift; sourceTree = "<group>"; };
+		D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableDec.swift; sourceTree = "<group>"; };
+		D3052BFD1C1CAA74001D8DCD /* YearView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearView.swift; sourceTree = "<group>"; };
+		D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hours+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3052C071C1CAB95001D8DCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D315C4F51C47B5D30046D076 /* savedSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "savedSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D315C4F71C47B5F00046D076 /* savedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = savedSettings.swift; sourceTree = "<group>"; };
@@ -140,31 +140,31 @@
 			isa = PBXGroup;
 			children = (
 				D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */,
+				D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */,
 				D31DCF851C26F73300AEFFF9 /* Break.swift */,
-				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
-				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
-				D33871AD1C304CDC006D7146 /* Payment.swift */,
+				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
 				D315C4F41C47B5BD0046D076 /* CoreDataSettings */,
+				D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */,
+				D3052BF31C1CAA3E001D8DCD /* DailyCell.swift */,
+				D3052BEE1C1CA9EE001D8DCD /* DayDataModel.xcdatamodeld */,
+				D3052BF71C1CAA6B001D8DCD /* DayView.swift */,
+				D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */,
 				D3C8B57A1C2435050021D679 /* FirstViewController.swift */,
+				D31DCF871C26F79B00AEFFF9 /* Holiday.swift */,
+				D3C8B5781C2434DE0021D679 /* Hours.swift */,
 				D3052C031C1CAA7D001D8DCD /* Hours+CoreDataProperties.swift */,
+				D3052BCC1C1CA9C2001D8DCD /* Info.plist */,
+				D3052BC91C1CA9C2001D8DCD /* LaunchScreen.storyboard */,
+				D3052C071C1CAB95001D8DCD /* Main.storyboard */,
+				D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */,
+				D33871AD1C304CDC006D7146 /* Payment.swift */,
+				D37BFCCA1C67F2F900774834 /* PeriodeView.swift */,
+				D33871AA1C2D61A3006D7146 /* Settings.swift */,
 				D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */,
+				D33871AF1C306026006D7146 /* userDefaults.swift */,
 				D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */,
 				D3052BFC1C1CAA74001D8DCD /* VariableDec.swift */,
-				D3C8B5781C2434DE0021D679 /* Hours.swift */,
-				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
-				D33871AF1C306026006D7146 /* userDefaults.swift */,
-				D37BFCCA1C67F2F900774834 /* PeriodeView.swift */,
 				D3052BFD1C1CAA74001D8DCD /* YearView.swift */,
-				D31DCF871C26F79B00AEFFF9 /* Holiday.swift */,
-				D33871AA1C2D61A3006D7146 /* Settings.swift */,
-				D3052BF71C1CAA6B001D8DCD /* DayView.swift */,
-				D3052BC01C1CA9C2001D8DCD /* MasterViewController.swift */,
-				D3052BC21C1CA9C2001D8DCD /* DetailViewController.swift */,
-				D3052BF11C1CA9FC001D8DCD /* CustomCell.xib */,
-				D3052C071C1CAB95001D8DCD /* Main.storyboard */,
-				D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */,
-				D3052BC91C1CA9C2001D8DCD /* LaunchScreen.storyboard */,
-				D3052BCC1C1CA9C2001D8DCD /* Info.plist */,
 			);
 			path = "PayDay!";
 			sourceTree = "<group>";
@@ -486,6 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PayDay!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PayDay!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
