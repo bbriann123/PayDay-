@@ -191,7 +191,7 @@ class TimesInsertView: UIViewController, UIPickerViewDelegate {
     
     func searchResultArray(currentCellDate: String)-> NSInteger{
         var returnInt:Int = -1
-        for var i:Int = 0; i < requested.count; ++i{
+        for i:Int in 0 ..< requested.count{
             let dateAsString = requested[i].dateAsString
             if (dateAsString! == currentCellDate){
                 returnInt = i
@@ -204,7 +204,7 @@ class TimesInsertView: UIViewController, UIPickerViewDelegate {
         var breakTimes:Double = 0
         let returnValues = Break.getBreaks(startTime, endTime: endTime)
         let breaks = returnValues.0
-        for var x = 0; x < breaks.count; ++x{
+        for x in 0 ..< breaks.count{
             if !breaks[x].isPayed() {
                 breakTimes += Double(breaks[x].getMin())
             }

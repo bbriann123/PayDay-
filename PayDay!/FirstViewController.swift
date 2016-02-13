@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import iAd
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, ADBannerViewDelegate {
     @IBOutlet weak var textColum: UILabel!
     @IBOutlet weak var wageColumn: UILabel!
     @IBOutlet weak var hourColumn: UILabel!
@@ -22,7 +23,7 @@ class FirstViewController: UIViewController {
     let payment = Payment()
     var hourlyWage = 0.0
     var currentPeriodNumber = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setPeriod()
@@ -98,7 +99,7 @@ class FirstViewController: UIViewController {
     }
     func determineMoreThanTwelve() -> [Int: Int] {
         var totalHours = [Int:Int]()
-        for var l = 0; l < currentPeriod.count; ++l{
+        for l in 0 ..< currentPeriod.count{
             if totalHours[Int(currentPeriod[l].weekNumber! as String)!] != nil {
                 let oldValue = totalHours.updateValue(0, forKey: Int(currentPeriod[l].weekNumber! as String)!)
                 totalHours.updateValue(oldValue!+Int(currentPeriod[l].totalTime!), forKey: Int(currentPeriod[l].weekNumber! as String)!)
@@ -111,7 +112,7 @@ class FirstViewController: UIViewController {
     func getBonusHours(weekNumber: Int) -> (totalLoon: Double, totalUren:Double){
         var totalLoon:Double = 0.0
         var totalUren:Double = 0.0
-        for var l = 0; l < currentPeriod.count; ++l{
+        for l in 0 ..< currentPeriod.count{
             if Int(currentPeriod[l].weekNumber! as String)! == weekNumber {
                 totalLoon = totalLoon + payment.isToeslagUur(currentPeriod[l].date!, startTime: getHourMinute(currentPeriod[l].startTime!), endTime: getHourMinute(currentPeriod[l].endTime!), weekMoreThanThirtySix: false).totaalLoon
                 totalUren = totalUren + payment.isToeslagUur(currentPeriod[l].date!, startTime: getHourMinute(currentPeriod[l].startTime!), endTime: getHourMinute(currentPeriod[l].endTime!), weekMoreThanThirtySix: false).totaalUren
@@ -135,7 +136,7 @@ class FirstViewController: UIViewController {
         var totalTime = 0
         var toeslagTotal:Double = 0.0
         var toeslagUren:Double = 0.0
-        for var x = 0; x < currentPeriod.count; ++x{
+        for x in 0 ..< currentPeriod.count{
             totalTime = totalTime + Int(currentPeriod[x].totalTime!)
         }
         for (key, value) in weeks{
@@ -205,7 +206,7 @@ class FirstViewController: UIViewController {
         return (seconds / 3600, (seconds % 3600) / 60)
     }
     func searchResultArray(currentPeriod: Int){
-        for var i:Int = 0; i < requested.count; ++i{
+        for i:Int in 0 ..< requested.count{
             let periodNumber:Int = Int(requested[i].periodeNumber!)
             if (periodNumber == currentPeriod){
                 self.currentPeriod.append(requested[i])

@@ -81,11 +81,11 @@ class Payment {
         let formatter = NSNumberFormatter()
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 3
-        var minutesToHundreds = Int(Double(String(formatter.stringFromNumber(startTime)!).componentsSeparatedByString(".")[1])!*1.6666666667)
+        var minutesToHundreds = Int(Double(String(formatter.stringFromNumber(startTime)!).componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ".,"))[1])!*1.6666666667)
         let remainingMinutesInHundreds = 100 - minutesToHundreds
         var remainderMinutes: Bool = false
         var remainderEndMinutes:Bool = false
-        var remainingEndMinutes = Int(Double(String(formatter.stringFromNumber(endTime)!).componentsSeparatedByString(".")[1])!*1.6666666667)
+        var remainingEndMinutes = Int(Double(String(formatter.stringFromNumber(endTime)!).componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ".,"))[1])!*1.6666666667)
         if remainingEndMinutes == 0{
             remainingEndMinutes = 100
         }
@@ -96,7 +96,7 @@ class Payment {
         switch weekdayNumber{
             /* CASE MONDAY THRUE FRIDAY */
         case 2...6:
-            for var x = 0.00; x < endTime; x++ {
+            for var x = 0.00; x < endTime; x+=1 {
                 if endTime < startTime {
                     endTime = endTime+24
                 }
@@ -183,7 +183,7 @@ class Payment {
             /* CASE SATURDAY */
         case 7:
             
-            for var x = 0.00; x < endTime; x++ {
+            for var x = 0.00; x < endTime; x+=1 {
                 if endTime < startTime {
                     endTime = endTime+24
                 }
@@ -256,7 +256,7 @@ class Payment {
             }
             
         case 1:
-            for var x = 0.00; x < endTime; x++ {
+            for var x = 0.00; x < endTime; x+=1 {
                 if endTime < startTime {
                     endTime = endTime+24
                 }

@@ -12,28 +12,32 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
-class PeriodeView: UIViewController, UITableViewDelegate {
+class PeriodeView: UIViewController, UITableViewDelegate{ 
     //Declare variables.
     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var requested:[Hours] = []
     var yearArray:[Hours] = []
     var weekArray:[Hours] = []
-    
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var bannerView: GADBannerView!
     var varDec = VariableDec()
+    
     
     //First load, fires when view gets called for the first time
     override func viewDidLoad() {
         super.viewDidLoad()
+        bannerView.adUnitID = "ca-app-pub-1488852759580167/4988475532"
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
         varDec = (tabBarController as! VariableController).varDec
         let context:NSManagedObjectContext = appDel.managedObjectContext
         requested = Hours.returnDate(context) as! [Hours]
         searchResultArrayYear()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
     
     //Runs when navigating back to the view, Reloads all data to add total hours or subtract when deleted.
     override func viewWillAppear(animated: Bool) {
@@ -96,7 +100,7 @@ class PeriodeView: UIViewController, UITableViewDelegate {
     
     //Gets all results from 'requested' array and puts them in a seperate array.
     func searchResultArrayYear(){
-        for var i:Int = 0; i < requested.count; ++i{
+        for i:Int in 0...requested.count{
             let yearNumber = requested[i].yearNumber
             if (yearNumber! == Int(varDec.pressedYear)!){
                 yearArray.append(requested[i])
@@ -106,7 +110,7 @@ class PeriodeView: UIViewController, UITableViewDelegate {
     
     //Gets the results corrosponding with the week being created (cell number) and stores them in a array.
     func searchCurrentWeek(currentCellWeek: String){
-        for var i:Int = 0; i < yearArray.count; ++i{
+        for i:Int in 0...yearArray.count{
             let weekNumber = yearArray[i].weekNumber
             if(weekNumber != nil){
                 if (weekNumber! == currentCellWeek){
@@ -119,7 +123,7 @@ class PeriodeView: UIViewController, UITableViewDelegate {
     //Searches the weekArray array and adds all totalhours from each entity to create the total worked hours.
     func findTotalHoursPerWeek()-> NSInteger{
         var totalHours = 0
-        for var i:Int = 0; i < weekArray.count; ++i{
+        for i:Int in 0...weekArray.count{
             totalHours += Int(weekArray[i].totalTime!)
         }
         return totalHours

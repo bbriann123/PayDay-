@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class BreakCalculator: UIViewController, UIPickerViewDelegate {
+import iAd
+class BreakCalculator: UIViewController, UIPickerViewDelegate, ADBannerViewDelegate {
 
     
     @IBOutlet weak var outPut: UILabel!
@@ -17,6 +17,7 @@ class BreakCalculator: UIViewController, UIPickerViewDelegate {
     let minutes:[String] = ["00","15","30","45"]
     var pickerViewRows = 10000
     var pickerViewMiddle = 0
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewMiddle = ((pickerViewRows / hours.count) / 2) * hours.count
@@ -97,7 +98,7 @@ class BreakCalculator: UIViewController, UIPickerViewDelegate {
         let breaks = returnValues.0
         let breakTime = returnValues.1
         var totalString:String = ""
-        for var x = 0; x < breaks.count; ++x{
+        for x in 0..<breaks.count{
             totalString = totalString + String(breaks[x].getMin()) + " minuten"
             if breaks[x].isPayed() {
                 totalString += " betaalde"

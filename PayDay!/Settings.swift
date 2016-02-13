@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 class Settings: UIViewController, UITableViewDelegate {
     let cellText = ["Uurloon", "Currency","Contract uren"]
@@ -23,8 +24,20 @@ class Settings: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var navBar: UINavigationBar!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
+  
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        print("google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+        bannerView.adUnitID = "ca-app-pub-1488852759580167/8897297931"
+        bannerView.rootViewController = self
+        bannerView.loadRequest(GADRequest())
         let context:NSManagedObjectContext = appDel.managedObjectContext
         navBar.topItem!.title = "Settings"
         var settings = savedSettings.returnSettings(context) as! [savedSettings]
@@ -74,9 +87,6 @@ class Settings: UIViewController, UITableViewDelegate {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -148,7 +158,7 @@ class Settings: UIViewController, UITableViewDelegate {
             //Fix for error with UICollectioNViewFlowLayOut    setting needs. See topic : <https://forums.developer.apple.com/thread/18294>
             alert.view.setNeedsLayout()
         }else if !accessoryButton{
-            for var size = 0; size < currencyArray.count; ++size{
+            for size in 0...currencyArray.count{
                 let createdCurrency = "\(currencyArray[size]) - \(currencyArrayString[size])"
                 alert.addAction(UIAlertAction(title: createdCurrency , style: UIAlertActionStyle.Default, handler : { (UIAlertAction)in
                     let currencySplit = UIAlertAction.title!.componentsSeparatedByString(" ")

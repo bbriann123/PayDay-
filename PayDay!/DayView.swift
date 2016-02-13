@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import iAd
 
-class DayView: UIViewController, UITableViewDelegate {
+class DayView: UIViewController, UITableViewDelegate, ADBannerViewDelegate {
     var dayData = ["Maandag", "Dinsdag", "Woensdag", "Donderdag","Vrijdag","Zaterdag","Zondag"]
     var varDec = VariableDec()
     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -105,7 +106,7 @@ class DayView: UIViewController, UITableViewDelegate {
     
     func searchResultArray(currentCellDate: String)-> NSInteger{
         var returnInt:Int = -1
-        for var i:Int = 0; i < requested.count; ++i{
+        for i:Int in 0 ..< requested.count{
             let dateAsString = requested[i].dateAsString
             if (dateAsString! == currentCellDate){
                 returnInt = i
