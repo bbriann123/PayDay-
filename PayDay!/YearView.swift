@@ -29,7 +29,14 @@ class YearView: UIViewController,UITableViewDelegate {
         varDec = (tabBarController as! VariableController).varDec
         userDefaults().saveDefaultsDouble("currentWage", name:0.0)
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        let name = "YearView"
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
     override func viewDidAppear(animated: Bool) {
         //Do any additional setup when view is able to be seen
     }

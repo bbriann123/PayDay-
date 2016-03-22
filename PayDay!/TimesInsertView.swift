@@ -43,7 +43,14 @@ class TimesInsertView: UIViewController, UIPickerViewDelegate {
     let hours:[String] = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"]
     let minutes:[String] = ["00","05","10","15","20","25","30","35","40","45","50","55"]
     
-    
+    override func viewWillAppear(animated: Bool) {
+        let name = "TimeInsertView"
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         varDec = (tabBarController as! VariableController).varDec

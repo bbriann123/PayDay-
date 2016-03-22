@@ -48,7 +48,6 @@ class Break {
         var l:Int = 0
         var k:Int = 0
         repeat{
-            
             if (endTime - fictiveEndTime < 2.0){
                 break
             }else{
@@ -109,6 +108,7 @@ class Break {
             arrayList.removeAll()
             arrayList.append(BreakType.Lunch_half)
         }
+        print(fictiveEndTime)
         if( startTime == 9 && endTime >= 13 && endTime < 14){
             breakTime.removeAll()
             breakTime.append(fictiveEndTime)

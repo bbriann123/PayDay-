@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import iAd
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +15,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Configure tracker from GoogleService-Info.plist.
+        //var configureError:NSError?
+        //GGLContext.sharedInstance().configureWithError(&configureError)
+       // assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        let notificationTypes : UIUserNotificationType = [.Alert, .Badge, .Sound]
+        let notificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        // Optional: configure GAI options.
+        let gai = GAI.sharedInstance()
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+       //gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+        let appInfo = NSBundle.mainBundle().infoDictionary! as Dictionary<String,AnyObject>
+        let shortVersionString = appInfo["CFBundleShortVersionString"] as! String
+        let bundleVersion      = appInfo["CFBundleVersion"] as! String
+        let applicationVersion = shortVersionString + "." + bundleVersion
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(applicationVersion, forKey: "application_version")
+        defaults.synchronize()
+        
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings)
+    {
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        var devToken = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString:"")
+        devToken = devToken.stringByReplacingOccurrencesOfString(">", withString: "")
+        devToken = devToken.stringByReplacingOccurrencesOfString(" ", withString:"")
+        let url: NSURL = NSURL(string: "http://www.brianvandenheuvel.com/insert_php.php")!
+        let request = NSMutableURLRequest(URL:url)
+        request.HTTPMethod = "POST"
+        let postString = "token="+devToken+"&IOS=\(UIDevice.currentDevice().systemVersion)&device=\(UIDevice.currentDevice().modelName)&app_version=\(UIApplication.appVersion())"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
+            guard error == nil && data != nil else {
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+               // print("response = \(response)")
+            }
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(devToken, forKey:"deviceToken")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print(error.localizedDescription)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print(userInfo)
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowView", object: nil, userInfo:userInfo)
+
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -36,6 +96,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        let deviceToken = NSUserDefaults.standardUserDefaults().stringForKey("deviceToken")
+        if deviceToken != nil{
+            let url: NSURL = NSURL(string: "http://www.brianvandenheuvel.com/updateNotifications.php")!
+            let request = NSMutableURLRequest(URL:url)
+            request.HTTPMethod = "POST"
+            let postString = "token="+deviceToken!
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ data, response, error in
+                guard error == nil && data != nil else {
+                    print("error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    // print("response = \(response)")
+                }
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                //print("responseString = \(responseString)")
+            }
+            task.resume()
+        }
+        UIApplication.sharedApplication().applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber-1
+        
     }
     
     func applicationWillTerminate(application: UIApplication) {
@@ -70,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             
-            dict[NSUnderlyingErrorKey] = error as NSError
+            dict[NSUnderlyingErrorKey] = error as! NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -107,4 +191,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
-

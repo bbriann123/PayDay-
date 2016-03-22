@@ -34,9 +34,12 @@
 		D33871AE1C304CDC006D7146 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AD1C304CDC006D7146 /* Payment.swift */; };
 		D33871B01C306026006D7146 /* userDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33871AF1C306026006D7146 /* userDefaults.swift */; };
 		D37BFCCB1C67F2F900774834 /* PeriodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37BFCCA1C67F2F900774834 /* PeriodeView.swift */; };
-		D38C35751C6FBC2600C92B32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D38C35741C6FBC2600C92B32 /* Default-568h@2x.png */; };
+		D37FFE621C70CFCF001DE304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37FFE661C70CFCF001DE304 /* GoogleService-Info.plist */; };
+		D37FFE631C70CFCF001DE304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37FFE661C70CFCF001DE304 /* GoogleService-Info.plist */; };
+		D37FFE641C70CFCF001DE304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37FFE661C70CFCF001DE304 /* GoogleService-Info.plist */; };
 		D3C8B5791C2434DE0021D679 /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B5781C2434DE0021D679 /* Hours.swift */; };
 		D3C8B57B1C2435050021D679 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B57A1C2435050021D679 /* FirstViewController.swift */; };
+		D3D8574C1C70EA0600E96540 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3D8574B1C70EA0600E96540 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,10 +94,12 @@
 		D33871AA1C2D61A3006D7146 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D33871AD1C304CDC006D7146 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		D33871AF1C306026006D7146 /* userDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDefaults.swift; sourceTree = "<group>"; };
+		D34DC6D01C70CB4400D96426 /* PayDay!-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PayDay!-Bridging-Header.h"; sourceTree = "<group>"; };
 		D37BFCCA1C67F2F900774834 /* PeriodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodeView.swift; sourceTree = "<group>"; };
-		D38C35741C6FBC2600C92B32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D37FFE651C70CFCF001DE304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Base; path = "Base.lproj/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C8B5781C2434DE0021D679 /* Hours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
 		D3C8B57A1C2435050021D679 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D3D8574B1C70EA0600E96540 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +148,6 @@
 		D3052BB21C1CA9C2001D8DCD = {
 			isa = PBXGroup;
 			children = (
-				D38C35741C6FBC2600C92B32 /* Default-568h@2x.png */,
 				D3052BBD1C1CA9C2001D8DCD /* PayDay! */,
 				D3052BD41C1CA9C2001D8DCD /* PayDay!Tests */,
 				D3052BDF1C1CA9C2001D8DCD /* PayDay!UITests */,
@@ -168,6 +172,8 @@
 			children = (
 				D3052BBE1C1CA9C2001D8DCD /* AppDelegate.swift */,
 				D3052BC71C1CA9C2001D8DCD /* Assets.xcassets */,
+				D34DC6D01C70CB4400D96426 /* PayDay!-Bridging-Header.h */,
+				D37FFE661C70CFCF001DE304 /* GoogleService-Info.plist */,
 				D31DCF851C26F73300AEFFF9 /* Break.swift */,
 				D31DCF891C28719F00AEFFF9 /* BreakCalculator.swift */,
 				D315C4F41C47B5BD0046D076 /* CoreDataSettings */,
@@ -187,6 +193,7 @@
 				D33871AD1C304CDC006D7146 /* Payment.swift */,
 				D37BFCCA1C67F2F900774834 /* PeriodeView.swift */,
 				D33871AA1C2D61A3006D7146 /* Settings.swift */,
+				D3D8574B1C70EA0600E96540 /* Settings.bundle */,
 				D3052BFA1C1CAA74001D8DCD /* TimesInsertView.swift */,
 				D33871AF1C306026006D7146 /* userDefaults.swift */,
 				D3052BFB1C1CAA74001D8DCD /* VariabeController.swift */,
@@ -334,8 +341,9 @@
 				D3052BCB1C1CA9C2001D8DCD /* LaunchScreen.storyboard in Resources */,
 				D3052C081C1CAB95001D8DCD /* Main.storyboard in Resources */,
 				D3052BC81C1CA9C2001D8DCD /* Assets.xcassets in Resources */,
-				D38C35751C6FBC2600C92B32 /* Default-568h@2x.png in Resources */,
 				D3052BF21C1CA9FC001D8DCD /* CustomCell.xib in Resources */,
+				D37FFE621C70CFCF001DE304 /* GoogleService-Info.plist in Resources */,
+				D3D8574C1C70EA0600E96540 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37FFE631C70CFCF001DE304 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37FFE641C70CFCF001DE304 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +483,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D37FFE661C70CFCF001DE304 /* GoogleService-Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D37FFE651C70CFCF001DE304 /* Base */,
+			);
+			name = "GoogleService-Info.plist";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -564,13 +582,16 @@
 			baseConfigurationReference = 9AAE29E4FEFD697E70D72C51 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brian van den Heuvel (JS6D9L5JK6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "PayDay!/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/brian/Documents/Programming Swift/PayDay!/PayDay!/PayDay!-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -580,13 +601,16 @@
 			baseConfigurationReference = 5B87B27F10D758F014FB697C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brian van den Heuvel (JS6D9L5JK6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "PayDay!/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mijnroadtrip.PayDay-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/brian/Documents/Programming Swift/PayDay!/PayDay!/PayDay!-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

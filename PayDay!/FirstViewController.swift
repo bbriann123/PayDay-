@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import iAd
+import GoogleMobileAds
 
-class FirstViewController: UIViewController, ADBannerViewDelegate {
+class FirstViewController: UIViewController, ADBannerViewDelegate, GADInterstitialDelegate {
     @IBOutlet weak var textColum: UILabel!
     @IBOutlet weak var wageColumn: UILabel!
     @IBOutlet weak var hourColumn: UILabel!
@@ -23,10 +24,13 @@ class FirstViewController: UIViewController, ADBannerViewDelegate {
     let payment = Payment()
     var hourlyWage = 0.0
     var currentPeriodNumber = 0
+    var interstitial: GADInterstitial!
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPeriod()
+        count = 0
         let context:NSManagedObjectContext = appDel.managedObjectContext
         var settings = savedSettings.returnSettings(context) as! [savedSettings]
         if !settings.isEmpty {
@@ -48,6 +52,36 @@ class FirstViewController: UIViewController, ADBannerViewDelegate {
         Periode.text = "Periode \(currentPeriodNumber)"
         self.currentPeriod.removeAll()
     }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-1488852759580167/9321479936")
+        interstitial.delegate = self
+        let request = GADRequest()
+        // Requests test ads on test devices.
+        //request.testDevices = ["a07a9a81623a82b33694f5cc2eeb6f38"]
+        interstitial.loadRequest(request)
+        return interstitial
+    }
+
+    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+        if self.interstitial.isReady{
+            self.interstitial.presentFromRootViewController(self)
+        }
+    }
+    func interstitialDidDismissScreen(ad: GADInterstitial) {
+        self.interstitial = createAndLoadInterstitial()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let name = "PayDay! (Payment)"
+        self.interstitial = createAndLoadInterstitial()
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
+    
     override func viewDidAppear(animated: Bool) {
         setPeriod()
         let context:NSManagedObjectContext = appDel.managedObjectContext

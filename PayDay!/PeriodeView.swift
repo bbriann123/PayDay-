@@ -47,7 +47,14 @@ class PeriodeView: UIViewController, UITableViewDelegate{
         requested = Hours.returnDate(context) as! [Hours]
         searchResultArrayYear()
         self.tableView.reloadData()
+        let name = "PeriodView"
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,7 +107,7 @@ class PeriodeView: UIViewController, UITableViewDelegate{
     
     //Gets all results from 'requested' array and puts them in a seperate array.
     func searchResultArrayYear(){
-        for i:Int in 0...requested.count{
+        for i:Int in 0..<requested.count{
             let yearNumber = requested[i].yearNumber
             if (yearNumber! == Int(varDec.pressedYear)!){
                 yearArray.append(requested[i])
@@ -110,7 +117,7 @@ class PeriodeView: UIViewController, UITableViewDelegate{
     
     //Gets the results corrosponding with the week being created (cell number) and stores them in a array.
     func searchCurrentWeek(currentCellWeek: String){
-        for i:Int in 0...yearArray.count{
+        for i:Int in 0..<yearArray.count{
             let weekNumber = yearArray[i].weekNumber
             if(weekNumber != nil){
                 if (weekNumber! == currentCellWeek){
@@ -123,7 +130,7 @@ class PeriodeView: UIViewController, UITableViewDelegate{
     //Searches the weekArray array and adds all totalhours from each entity to create the total worked hours.
     func findTotalHoursPerWeek()-> NSInteger{
         var totalHours = 0
-        for i:Int in 0...weekArray.count{
+        for i:Int in 0..<weekArray.count{
             totalHours += Int(weekArray[i].totalTime!)
         }
         return totalHours

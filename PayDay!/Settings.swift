@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 import GoogleMobileAds
+import MessageUI
 
-class Settings: UIViewController, UITableViewDelegate {
-    let cellText = ["Uurloon", "Currency","Contract uren"]
+class Settings: UIViewController, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+    let cellText = ["Uurloon", "Currency","Contract uren","Mail"]
     let currencyArray = ["€","$", "£","¥","CHF"]
     let currencyArrayString = ["EUR","USD","GBP","JPY","CHF"]
     var currencyNumber:Int = 0
@@ -26,15 +27,21 @@ class Settings: UIViewController, UITableViewDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var bannerView: GADBannerView!
-    
+
+
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
+        let name = "Settings"
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
   
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        print("google Mobile Ads SDK version: " + GADRequest.sdkVersion())
         bannerView.adUnitID = "ca-app-pub-1488852759580167/8897297931"
         bannerView.rootViewController = self
         bannerView.loadRequest(GADRequest())
@@ -122,9 +129,44 @@ class Settings: UIViewController, UITableViewDelegate {
         }else if indexPath.row == 2 {
             number = 2
             showAlert("Voer contracturen in", message: "Per 4 weken", textField: true, styleAlert: true, accessoryButton: false)
+        }else if indexPath.row == 3{
+            if MFMailComposeViewController.canSendMail() {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["support.payday@mijnroadtrip.com"])
+                mail.setSubject("PayDay! - App Contact")
+                let message = "--<br>Device Version: \(UIDevice.currentDevice().modelName)"
+                + "<br>OS name: \(UIDevice.currentDevice().systemName)"
+                + "<br>iOS version: \(UIDevice.currentDevice().systemVersion)"
+                + "<br> Device name: \(UIDevice.currentDevice().name)"
+                + "<br> App version: \(UIApplication.versionBuild()))"
+                print(UIApplication.appBuild())
+                print(UIApplication.appVersion())
+                
+                mail.setMessageBody("<b><span style='color:grey'>My message</span></b><p> \(message)", isHTML: true)
+                presentViewController(mail, animated: true, completion: nil)
+            } else {
+                // give feedback to the user
+            }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Error: \(error?.localizedDescription)")
+        default:
+            break
+        }
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
@@ -213,5 +255,61 @@ extension String {
             }
         }
         return 0
+    }
+}
+extension UIDevice {
+    
+    var modelName: String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        let identifier = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8 where value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+        
+        switch identifier {
+        case "iPod5,1":                                 return "iPod Touch 5"
+        case "iPod7,1":                                 return "iPod Touch 6"
+        case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return "iPhone 4"
+        case "iPhone4,1":                               return "iPhone 4s"
+        case "iPhone5,1", "iPhone5,2":                  return "iPhone 5"
+        case "iPhone5,3", "iPhone5,4":                  return "iPhone 5c"
+        case "iPhone6,1", "iPhone6,2":                  return "iPhone 5s"
+        case "iPhone7,2":                               return "iPhone 6"
+        case "iPhone7,1":                               return "iPhone 6 Plus"
+        case "iPhone8,1":                               return "iPhone 6s"
+        case "iPhone8,2":                               return "iPhone 6s Plus"
+        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return "iPad 2"
+        case "iPad3,1", "iPad3,2", "iPad3,3":           return "iPad 3"
+        case "iPad3,4", "iPad3,5", "iPad3,6":           return "iPad 4"
+        case "iPad4,1", "iPad4,2", "iPad4,3":           return "iPad Air"
+        case "iPad5,3", "iPad5,4":                      return "iPad Air 2"
+        case "iPad2,5", "iPad2,6", "iPad2,7":           return "iPad Mini"
+        case "iPad4,4", "iPad4,5", "iPad4,6":           return "iPad Mini 2"
+        case "iPad4,7", "iPad4,8", "iPad4,9":           return "iPad Mini 3"
+        case "iPad5,1", "iPad5,2":                      return "iPad Mini 4"
+        case "iPad6,7", "iPad6,8":                      return "iPad Pro"
+        case "AppleTV5,3":                              return "Apple TV"
+        case "i386", "x86_64":                          return "Simulator"
+        default:                                        return identifier
+        }
+    }
+    
+}
+extension UIApplication {
+    
+    class func appVersion() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+    }
+    
+    class func appBuild() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
+    }
+    
+    class func versionBuild() -> String {
+        let version = appVersion(), build = appBuild()
+        
+        return version == build ? "v\(version)" : "v\(version)(\(build))"
     }
 }

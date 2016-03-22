@@ -11,4 +11,18 @@ import UIKit
 class VariableController: UITabBarController {
     let varDec = VariableDec()
     
+    override func viewDidLoad(){
+        print("In VariableController")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "NotificationAction:", name: "ShowView", object: nil)
+        
+    }
+    
+    func NotificationAction(notification: NSNotification){
+        print("in variableController")
+        print(notification)
+        print(notification.userInfo!["aps"]!)
+        dispatch_async(dispatch_get_main_queue()){
+            UITabBarController().selectedIndex = 3
+        }
+    }
 }

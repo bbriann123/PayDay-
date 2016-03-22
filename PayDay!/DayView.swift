@@ -37,11 +37,16 @@ class DayView: UIViewController, UITableViewDelegate, ADBannerViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
     override func viewWillAppear(animated: Bool) {
         let context:NSManagedObjectContext = appDel.managedObjectContext
         requested = Hours.returnDate(context) as! [Hours]
         self.tableView.reloadData()
+        let name = "DayView"
+        let tracker = GAI.sharedInstance().trackerWithTrackingId("UA-73733245-2")
+        tracker.set(kGAIScreenName, value: name)
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     override func viewWillDisappear(animated: Bool) {
         varDec.pressedYear = currentYear

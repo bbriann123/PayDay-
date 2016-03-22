@@ -256,7 +256,7 @@ class Payment {
             }
             
         case 1:
-            for var x = 0.00; x < endTime; x+=1 {
+            for var x = 0.00; x < endTime; x+=1{
                 if endTime < startTime {
                     endTime = endTime+24
                 }
